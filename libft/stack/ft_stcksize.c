@@ -2,24 +2,13 @@
 
 #include "ft_stack.h"
 
-void	ft_stckize(t_stack **stack)
+int	ft_stcksize(t_stack **stack)
 {
-	t_stack *temp;
-
-	new->index = 0;
-	new->next = *stack;
-	new->before = (*stack)->before;
-	(*stack)->before->next = new;
-	(*stack)->before = new;
-	*stack = new;
-	temp = new->next;
-	while (temp != *stack)
-	{
-		temp->index += 1;
-		temp = temp->next;
-	}
+	if (ft_stckcheck(stack))
+		return (0);
+	return ((*stack)->before->index + 1);
 }
-/*
+
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -61,13 +50,16 @@ int	main(void)
 
 	tmp = ft_stcknew(newint_point(42));
 	stack = &tmp;
-	printf("primeiro print");
+	printf("primeiro print\n");
+	printf("size of stack = %d\n", ft_stcksize(stack));
 	print_stack(stack);
 	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
 	printf("segundo print\n");
+	printf("size of stack = %d\n", ft_stcksize(stack));
 	print_stack(stack);
 	ft_stckadd_front(stack, ft_stcknew(newint_point(84)));
 	printf("terceiro print\n");
+	printf("size of stack = %d\n", ft_stcksize(stack));
 	print_stack(stack);
 	return (0);
-}*/
+}

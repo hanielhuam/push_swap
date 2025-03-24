@@ -2,11 +2,11 @@
 
 #include "ft_stack.h"
 
-void	ft_stckadd_front(t_stack **stack, t_stack *new)
+void	ft_stckadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack *temp;
 
-	if (!stack || !(*stack) || !new)
+	if (!ft_stckcheck(stack) || ft_stck)
 		return ;
 	new->index = 0;
 	new->next = *stack;

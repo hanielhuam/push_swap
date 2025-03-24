@@ -29,7 +29,7 @@ int	ft_stckcheck(t_stack **stack)
 		return (0);
 	return (2);
 }
-/*
+
 #include <stdio.h>
 
 int     *newint_point(int nu)
@@ -80,11 +80,6 @@ int     main(void)
 		printf("the stack checker = %d\n", ft_stckcheck(stack));
         ft_stckadd_front(stack, ft_stcknew(newint_point(84)));
         printf("terceiro print\n");
-        print_stack(stack);	
-		printf("the stack checker = %d\n", ft_stckcheck(stack));
-		(*stack)->before->index = 3;
-		printf("the stack checker = %d\n", ft_stckcheck(stack));
-		(*stack)->index = 5;
-		printf("the stack checker = %d\n", ft_stckcheck(stack));
-        return (0);
-}*/
+        print_stack(stack);
+		return (0);
+}
