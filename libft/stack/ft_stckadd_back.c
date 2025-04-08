@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stckadd_back.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 20:29:06 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/07 20:39:19 by hmacedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_stack.h"
 
@@ -6,20 +16,14 @@ void	ft_stckadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack *temp;
 
-	if (!ft_stckcheck(stack) || ft_stck)
+	if (!ft_stckcheck(stack) || !new)
 		return ;
-	new->index = 0;
+	
+	new->index = (*stack)->before->index + 1;
 	new->next = *stack;
 	new->before = (*stack)->before;
 	(*stack)->before->next = new;
 	(*stack)->before = new;
-	*stack = new;
-	temp = new->next;
-	while (temp != *stack)
-	{
-		temp->index += 1;
-		temp = temp->next;
-	}
 }
 /*
 #include <stdio.h>

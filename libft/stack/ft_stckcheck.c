@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stckcheck.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 20:18:08 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/07 21:05:38 by hmacedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_stack.h"
 
@@ -6,8 +16,9 @@
 description: this function check if the stack is ok
 return value
 0 = the stack is ok
-1 = the stack doesnt begin with 0
-2 = the stack doesnt end at the same element or isnt in the right order
+1 = the stack is empty or NULL
+2 = the stack doesnt begin with 0
+3 = the stack doesnt end at the same element or isnt in the right order
 */
 
 int	ft_stckcheck(t_stack **stack)
