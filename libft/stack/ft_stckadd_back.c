@@ -14,18 +14,15 @@
 
 void	ft_stckadd_back(t_stack **stack, t_stack *new)
 {
-	t_stack *temp;
-
 	if (!ft_stckcheck(stack) || !new)
 		return ;
-	
 	new->index = (*stack)->before->index + 1;
 	new->next = *stack;
 	new->before = (*stack)->before;
 	(*stack)->before->next = new;
 	(*stack)->before = new;
 }
-/*
+
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -69,11 +66,11 @@ int	main(void)
 	stack = &tmp;
 	printf("primeiro print");
 	print_stack(stack);
-	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
+	ft_stckadd_back(stack, ft_stcknew(newint_point(24)));
 	printf("segundo print\n");
 	print_stack(stack);
-	ft_stckadd_front(stack, ft_stcknew(newint_point(84)));
+	ft_stckadd_back(stack, ft_stcknew(newint_point(84)));
 	printf("terceiro print\n");
 	print_stack(stack);
 	return (0);
-}*/
+}
