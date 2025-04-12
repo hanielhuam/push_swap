@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stckdelone.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 20:46:26 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/11 21:30:46 by hmacedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "ft_stack.h"
 
-void	ft_stckdelone(t_stck *element, void (*del)(void*))
+void	ft_stckdelone(t_stack *element, void (*del)(void*))
 {
-	t_stck	*temp;
-
 	if (!element)
 		return ;
 	del(element->content);
@@ -56,9 +66,9 @@ int	main(void)
 
 	nu = newint_point(42);
 	el = ft_stcknew(nu);
-	printf("addres of nu is %p\naddres of el is %p\n", el, nu);
+	printf("index of el is %d\nint of nu is %d\n", el->index, *nu);
 	ft_stckdelone(el, del_stck);
 	printf("after delone\n");
-	printf("addres of nu is %p\naddres of el is %p\n", el, nu);
+	printf("index of el is %d\nint of nu is %d\n", el->index, *nu);
 	return (0);
 }
