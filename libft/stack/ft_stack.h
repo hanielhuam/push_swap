@@ -13,9 +13,9 @@ typedef struct s_stack
 	struct	s_stack	*before;
 }					t_stack;
 
-void	ft_swap(t_stack *stack);
-void	ft_push(t_stack *stack_from, t_stack *stack_to);
-void	ft_rotate(t_stack *stack, int reverse);
+void	ft_stckswap(t_stack **stack);
+void	ft_stckpush(t_stack **stack_from, t_stack **stack_to);
+void	ft_stckrotate(t_stack **stack, int reverse);
 t_stack	*ft_stcknew(void *content);
 void	ft_stckadd_front(t_stack **stack, t_stack *new);
 int		ft_stckcheck(t_stack **stack);

@@ -1,51 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_stckswap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 20:28:32 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/13 21:10:09 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/14 20:39:30 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	ft_swap(t_stack *stack)
+void	ft_stckswap(t_stack **stack)
 {
-	t_stack *new_next;
+	t_stack *temp;
 
-	if (!stack || !stack->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	new_next = stack;
-	stack = stack->next;
-	new_next->next = stack->next;
-	stack->next = new_next;
-	stack->before = new_next->before;
-	new_next->before = stack;
+	temp = *stack;
+	*stack= (*stack)->next;
+	(*stack)->be = ;
+	(*stack)->before = 
+	(*stack)->next = new_next;
+	(*stack)->before = new_next->before;
+	new_next->before = *stack;
 	new_next->index += 1;
-	stack->index -= 1;
-	if (ft_stckcheck(&stack))
-		return (NULL);
-	newstack = ft_stcknew(f(stack->content));
-	if (!newstack)
-		return (NULL);
-	start = stack->next;
-	while (start != stack)
-	{
-		temp = ft_stcknew(f(start->content));
-		if (!temp)
-		{
-			ft_stckclear(&newstack, del);
-			return (NULL);
-		}
-		ft_stckadd_back(&newstack, temp);
-		start = start->next;
-	}
-	return (newstack);
+	(*stack)->index -= 1;
+	stack = &new_next;
 }
-/*
+
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -85,28 +69,18 @@ void	print_stack(t_stack **stack)
 	printf("\n");
 }
 
-void	*plusone(void * content)
-{
-	int	*result;
-
-	result = malloc(sizeof(int) * 1);
-	*result = *((int *)content) + 1;
-	return ((void *)result);
-}
-
 int	main(void)
 {
 	t_stack	**stack;
 	t_stack *tmp;
-	t_stack *result;
 
 	tmp = ft_stcknew(newint_point(42));
 	stack = &tmp;
 	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
 	ft_stckadd_back(stack, ft_stcknew(newint_point(84)));
 	print_stack(stack);
-	result = ft_stckmap(*stack, plusone, free);
-	printf("depois da ft_stckiter\n");
-	print_stack(&result);
+	printf("depois da ft_stckswap\n");
+	ft_stckswap(stack);
+	print_stack(stack);
 	return (0);
-}*/
+}
