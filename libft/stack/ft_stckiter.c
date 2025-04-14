@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stckclear.c                                     :+:      :+:    :+:   */
+/*   ft_stckiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 18:07:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/13 19:28:33 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/12 20:09:17 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/12 21:18:39 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	ft_stckclear(t_stack **stack, void (*del)(void *))
+void	ft_stckiter(t_stack *stack, void (*f)(void *))
 {
-	t_stack	*temp;
-	
-	if (ft_stckcheck(stack) != 0)
+	t_stack	*start;
+
+	if (ft_stckcheck(&stack))
 		return ;
-	temp = (*stack)->next;
-	while (temp != *stack)
+	f(stack->content);
+	start = stack->next;
+	while (start != stack)
 	{
-		ft_stckdelone(temp, del);
-		temp = temp->next;
+		f(start->content);
+		start = start->next;
 	}
-	ft_stckdelone(*stack, del);
-	*stack = NULL;
 }
 /*
 #include <stdio.h>
@@ -67,9 +66,9 @@ void	print_stack(t_stack **stack)
 	printf("\n");
 }
 
-void	del_stck(void * content)
+void	plusone(void * content)
 {
-	free(content);
+	*((int *)content) += 1;
 }
 
 int	main(void)
@@ -82,8 +81,8 @@ int	main(void)
 	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
 	ft_stckadd_back(stack, ft_stcknew(newint_point(84)));
 	print_stack(stack);
-	ft_stckclear(stack, del_stck);
-	printf("depois da ft_clear\n");
+	ft_stckiter(*stack, plusone);
+	printf("depois da ft_stckiter\n");
 	print_stack(stack);
 	return (0);
 }*/

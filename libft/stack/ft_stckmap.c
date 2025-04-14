@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stckclear.c                                     :+:      :+:    :+:   */
+/*   ft_stckmap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 18:07:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/13 19:28:33 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/12 21:17:26 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/13 20:25:57 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	ft_stckclear(t_stack **stack, void (*del)(void *))
+t_stack	*ft_stckmap(t_stack *stack, void *(*f)(void *), void (*del)(void *))
 {
-	t_stack	*temp;
-	
-	if (ft_stckcheck(stack) != 0)
-		return ;
-	temp = (*stack)->next;
-	while (temp != *stack)
+	t_stack	*start;
+	t_stack *temp;
+	t_stack *newstack;
+
+	if (ft_stckcheck(&stack))
+		return (NULL);
+	newstack = ft_stcknew(f(stack->content));
+	if (!newstack)
+		return (NULL);
+	start = stack->next;
+	while (start != stack)
 	{
-		ft_stckdelone(temp, del);
-		temp = temp->next;
+		temp = ft_stcknew(f(start->content));
+		if (!temp)
+		{
+			ft_stckclear(&newstack, del);
+			return (NULL);
+		}
+		ft_stckadd_back(&newstack, temp);
+		start = start->next;
 	}
-	ft_stckdelone(*stack, del);
-	*stack = NULL;
+	return (newstack);
 }
 /*
 #include <stdio.h>
@@ -67,23 +77,28 @@ void	print_stack(t_stack **stack)
 	printf("\n");
 }
 
-void	del_stck(void * content)
+void	*plusone(void * content)
 {
-	free(content);
+	int	*result;
+
+	result = malloc(sizeof(int) * 1);
+	*result = *((int *)content) + 1;
+	return ((void *)result);
 }
 
 int	main(void)
 {
 	t_stack	**stack;
 	t_stack *tmp;
+	t_stack *result;
 
 	tmp = ft_stcknew(newint_point(42));
 	stack = &tmp;
 	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
 	ft_stckadd_back(stack, ft_stcknew(newint_point(84)));
 	print_stack(stack);
-	ft_stckclear(stack, del_stck);
-	printf("depois da ft_clear\n");
-	print_stack(stack);
+	result = ft_stckmap(*stack, plusone, free);
+	printf("depois da ft_stckiter\n");
+	print_stack(&result);
 	return (0);
 }*/
