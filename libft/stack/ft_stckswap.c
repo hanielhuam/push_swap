@@ -19,17 +19,17 @@ void	ft_stckswap(t_stack **stack)
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	temp = *stack;
-	*stack= (*stack)->next;
-	(*stack)->be = ;
-	(*stack)->before = 
-	(*stack)->next = new_next;
-	(*stack)->before = new_next->before;
-	new_next->before = *stack;
-	new_next->index += 1;
+	*stack = (*stack)->next;
+	(*stack)->before = temp->before;
+	(*stack)->before->next = *stack;
+	temp->before = *stack;
+	temp->next = (*stack)->next;
+	temp->next->before = temp;
+	(*stack)->next = temp;
+	temp->index += 1;
 	(*stack)->index -= 1;
-	stack = &new_next;
 }
-
+/*
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -83,4 +83,4 @@ int	main(void)
 	ft_stckswap(stack);
 	print_stack(stack);
 	return (0);
-}
+}*/
