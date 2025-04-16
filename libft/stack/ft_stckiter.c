@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 20:09:17 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/12 21:18:39 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/15 21:14:43 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_stckiter(t_stack *stack, void (*f)(void *))
 {
 	t_stack	*start;
 
-	if (ft_stckcheck(&stack))
+	if (!stack)
 		return ;
 	f(stack->content);
 	start = stack->next;
