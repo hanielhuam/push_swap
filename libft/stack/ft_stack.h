@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stack.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 20:44:46 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/17 20:47:23 by hmacedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FT_STACK
 # define FT_STACK
@@ -25,5 +35,6 @@ void	ft_stckdelone(t_stack *element, void (*del)(void *));
 void	ft_stckclear(t_stack **stack, void (*del)(void *));
 void	ft_stckiter(t_stack *stack, void (*f)(void *));
 t_stack	*ft_stckmap(t_stack *stack, void *(*f)(void *), void (*del)(void *));
+void	ft_stckiter_s(t_stack *stack, void (*f)(t_stack *));
 
 #endif 

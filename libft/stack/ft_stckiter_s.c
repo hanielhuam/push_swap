@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stckrotate.c                                    :+:      :+:    :+:   */
+/*   ft_stckiter_s.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 21:29:36 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/17 21:54:59 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/17 20:44:02 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/17 21:22:44 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-static void	minusone(t_stack *node)
+void	ft_stckiter_s(t_stack *stack, void (*f)(t_stack *))
 {
-	node->index -= 1;
-}
+	t_stack	*start;
 
-static void	plusone(t_stack *node)
-{
-	node->index += 1;
-}
-
-void	ft_stckrotate(t_stack **stack, int reverse)
-{
-	if (ft_stckcheck(stack))
+	if (!stack)
 		return ;
-	if (!reverse)
+	f(stack);
+	start = stack->next;
+	while (start != stack)
 	{
-		ft_stckiter_s(*stack, plusone);
-		*stack = (*stack)->before;
-		(*stack)->index = 0;
-	}
-	else
-	{
-		ft_stckiter_s(*stack, minusone);
-		(*stack)->index = (*stack)->before->index + 1;
-		*stack = (*stack)->next;
+		f(start);
+		start = start->next;
 	}
 }
 /*
@@ -79,21 +66,23 @@ void	print_stack(t_stack **stack)
 	printf("\n");
 }
 
+void	plusone(t_stack *node)
+{
+	node->index += 1;
+}
+
 int	main(void)
 {
-	t_stack	**stack_a;
-	t_stack *tmp_a;
+	t_stack	**stack;
+	t_stack *tmp;
 
-	tmp_a = ft_stcknew(newint_point(42));
-	stack_a = &tmp_a;
-	ft_stckadd_front(stack_a, ft_stcknew(newint_point(24)));
-	ft_stckadd_back(stack_a, ft_stcknew(newint_point(84)));
-	print_stack(stack_a);
-	printf("\ndepois da ft_stckrotate\n");
-	ft_stckrotate(stack_a, 0);
-	print_stack(stack_a);
-	printf("\ndepois da ft_stckrotate reverso\n");
-	ft_stckrotate(stack_a, 1);
-	print_stack(stack_a);
+	tmp = ft_stcknew(newint_point(42));
+	stack = &tmp;
+	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
+	ft_stckadd_back(stack, ft_stcknew(newint_point(84)));
+	print_stack(stack);
+	ft_stckiter_s(*stack, plusone);
+	printf("depois da ft_stckiter\n");
+	print_stack(stack);
 	return (0);
 }*/

@@ -6,28 +6,20 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:52:19 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/15 21:26:52 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/17 21:30:31 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-static void	minus_one(void *content)
+static void	minus_one(t_stack *node)
 {
-	int	*temp;
-
-	temp = (int *)content;
-	*temp -=1;
-	content = (void *)temp;
+	node->index -= 1;
 }
 
-static void	plus_one(void *content)
+static void	plus_one(t_stack *node)
 {
-	int	*temp;
-
-	temp = (int *)content;
-	*temp -=1;
-	content = (void *)temp;
+	node->index += 1;
 }
 
 void	ft_stckpush(t_stack **stack_from, t_stack **stack_to)
@@ -40,13 +32,15 @@ void	ft_stckpush(t_stack **stack_from, t_stack **stack_to)
 	*stack_from = (*stack_from)->next;
 	(*stack_from)->before = temp->before;
 	(*stack_from)->before->next = *stack_from;
-	ft_stckiter(*stack_from, minus_one);
-	ft_stckiter(*stack_to, plus_one);
+	ft_stckiter_s(*stack_from, minus_one);
+	ft_stckiter_s(*stack_to, plus_one);
 	temp->next = *stack_to;
 	temp->before = (*stack_to)->before;
+	temp->before->next = temp;
+	temp->next->before = temp;
 	*stack_to = temp;
 }
-
+/*
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -90,18 +84,19 @@ int	main(void)
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
-	t_stack *tmp;
+	t_stack *tmp_a;
+	t_stack *tmp_b;
 
-	tmp = ft_stcknew(newint_point(11));
-	stack_a = &tmp;
+	tmp_a = ft_stcknew(newint_point(11));
+	stack_a = &tmp_a;
 	ft_stckadd_front(stack_a, ft_stcknew(newint_point(10)));
 	ft_stckadd_back(stack_a, ft_stcknew(newint_point(12)));
 	printf("STACK A\n");
 	print_stack(stack_a);
-	tmp = ft_stcknew(newint_point(111));
-	stack_b = &tmp;	
-	ft_stckadd_front(stack_a, ft_stcknew(newint_point(110)));
-	ft_stckadd_back(stack_a, ft_stcknew(newint_point(112)));
+	tmp_b = ft_stcknew(newint_point(111));
+	stack_b = &tmp_b;	
+	ft_stckadd_front(stack_b, ft_stcknew(newint_point(110)));
+	ft_stckadd_back(stack_b, ft_stcknew(newint_point(112)));
 	printf("STACK B\n");
 	print_stack(stack_b);
 	printf("\ndepois da ft_stckpush\n");
@@ -111,4 +106,4 @@ int	main(void)
 	printf("STACK B\n");
 	print_stack(stack_b);
 	return (0);
-}
+}*/
