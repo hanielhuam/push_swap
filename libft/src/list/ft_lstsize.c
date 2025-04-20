@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 21:05:11 by hmacedo-          #+#    #+#             */
-/*   Updated: 2024/10/24 19:23:13 by hmacedo-         ###   ########.fr       */
+/*   Created: 2024/10/24 19:30:36 by hmacedo-          #+#    #+#             */
+/*   Updated: 2024/10/24 20:54:30 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_list.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (!new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
 /*
 #include <stdio.h>
@@ -28,7 +33,6 @@ void	show_node(t_list *node);
 
 int	main(void)
 {
-	t_list	*list;
 	t_list	*node1;
 	t_list	*node2;
 	t_list	*node3;
@@ -38,11 +42,12 @@ int	main(void)
 	node2 = ft_lstnew("Huam");
 	node3 = ft_lstnew("Macedo");
 	node4 = ft_lstnew("Ferreira");
+	node1->next = node2;
 	node2->next = node3;
 	node3->next = node4;
-	list = node2;
-	ft_lstadd_front(&list, NULL);
-	show_list(list);
+	printf("%d\n", ft_lstsize(node1));
+	printf("%d\n", ft_lstsize(node3));
+	printf("%d\n", ft_lstsize(NULL));
 	return (0);
 }
 

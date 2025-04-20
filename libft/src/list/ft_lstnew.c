@@ -23,7 +23,7 @@ t_list	*ft_lstnew(void *content)
 	node->next = NULL;
 	return (node);
 }
-
+/*
 #include <stdio.h>
 
 void	show_node(t_list *node);
@@ -43,4 +43,4 @@ void    show_node(t_list *node)
 {
 	printf("content = %s\n", (char *) node->content);
 	printf("next = %p", node->next);
-}
+}*/

@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 20:30:06 by hmacedo-          #+#    #+#             */
-/*   Updated: 2024/10/27 18:35:35 by hmacedo-         ###   ########.fr       */
+/*   Created: 2024/10/25 18:13:40 by hmacedo-          #+#    #+#             */
+/*   Updated: 2024/10/25 19:53:22 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_list.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst)
-		return (lst);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+		return ;
+	del(lst->content);
+	free(lst);
 }
 /*
 #include <stdio.h>
@@ -29,22 +28,22 @@ void	show_node(t_list *node);
 
 int	main(void)
 {
+	char	*name;
+	char	*second_name;
 	t_list	*node1;
 	t_list	*node2;
-	t_list	*node3;
-	t_list	*node4;
 
-	node1 = ft_lstnew("Haniel");
-	node2 = ft_lstnew("Huam");
-	node3 = ft_lstnew("Macedo");
-	node4 = ft_lstnew("Ferreira");
-	node1->next = node2;
-	node2->next = node3;
-	node3->next = node4;
-	show_node(ft_lstlast(node1));
-	node2->next = NULL;
-	show_node(ft_lstlast(node1));
-
+	name = ft_strdup("Haniel");
+	second_name = ft_strdup("Huam");
+	node1 = ft_lstnew(name);
+	node2 = ft_lstnew(second_name);
+	ft_lstadd_back(&node1, node2);
+	show_node(node1);
+	show_node(node2);
+	ft_lstdelone(node1, free);
+	printf("adress of content = %p\n", node1);
+	printf("content = %s\n", name);
+	show_node(node2);
 	return (0);
 }
 

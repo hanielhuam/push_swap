@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 18:13:40 by hmacedo-          #+#    #+#             */
-/*   Updated: 2024/10/25 19:53:22 by hmacedo-         ###   ########.fr       */
+/*   Created: 2024/10/25 19:55:51 by hmacedo-          #+#    #+#             */
+/*   Updated: 2024/10/26 02:10:47 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_list.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst)
-		return ;
-	del(lst->content);
-	free(lst);
+	t_list	*temp;
+
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
+	lst = NULL;
 }
 /*
 #include <stdio.h>
@@ -25,6 +30,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 void	show_list(t_list *list);
 
 void	show_node(t_list *node);
+
+void	show_delnode(t_list *node, char *content);
 
 int	main(void)
 {
@@ -38,12 +45,8 @@ int	main(void)
 	node1 = ft_lstnew(name);
 	node2 = ft_lstnew(second_name);
 	ft_lstadd_back(&node1, node2);
-	show_node(node1);
-	show_node(node2);
-	ft_lstdelone(node1, free);
-	printf("adress of content = %p\n", node1);
-	printf("content = %s\n", name);
-	show_node(node2);
+	show_list(node1);
+	ft_lstclear(&node1, free);
 	return (0);
 }
 
@@ -61,4 +64,11 @@ void    show_node(t_list *node)
 	printf("adrees of content = %p\n", node);
 	printf("content = %s\n", (char *) node->content);
 	printf("next = %p\n", node->next);
+}
+
+void	show_delnode(t_list *node, char *content)
+{
+	printf("addres of node->content %p\n", node->content);
+	printf("addres of content %p\n", content);
+	printf("content %s\n", content);
 }*/
