@@ -6,21 +6,21 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:44:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/20 21:33:23 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:30:41 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STACK
-# define FT_STACK
+#ifndef FT_STACK_H
+# define FT_STACK_H
 
-#include "libft.h"
+# include "libft.h"
 
 typedef struct s_stack
 {
 	void			*content;
 	int				index;
-	struct	s_stack	*next;
-	struct	s_stack	*before;
+	struct s_stack	*next;
+	struct s_stack	*before;
 }					t_stack;
 
 void	ft_stckswap(t_stack **stack);

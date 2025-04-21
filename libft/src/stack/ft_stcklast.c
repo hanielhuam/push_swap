@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stcklast.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/21 18:09:40 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/21 18:09:48 by hmacedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_stack.h"
 
@@ -29,7 +39,7 @@ int	ft_stckcheck(t_stack **stack)
 		return (0);
 	return (2);
 }
-
+/*
 #include <stdio.h>
 
 int     *newint_point(int nu)
@@ -83,3 +93,4 @@ int     main(void)
         print_stack(stack);
 		return (0);
 }
+*/

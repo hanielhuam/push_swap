@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 18:07:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/13 19:28:33 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:21:04 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_stckclear(t_stack **stack, void (*del)(void *))
 {
 	t_stack	*temp;
-	
+
 	if (ft_stckcheck(stack) != 0)
 		return ;
 	temp = (*stack)->next;

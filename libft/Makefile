@@ -30,7 +30,11 @@ SRCS = ${SRC_DIR}/ft_isalpha.c ${SRC_DIR}/ft_isdigit.c \
 	${SRC_DIR}/list/ft_lstsize.c ${SRC_DIR}/list/ft_lstlast.c \
 	${SRC_DIR}/list/ft_lstadd_back.c ${SRC_DIR}/list/ft_lstdelone.c \
 	${SRC_DIR}/list/ft_lstclear.c ${SRC_DIR}/list/ft_lstiter.c \
-	${SRC_DIR}/list/ft_lstmap.c
+	${SRC_DIR}/list/ft_lstmap.c \
+	${SRC_DIR}/ft_printf/ft_printf.c ${SRC_DIR}/ft_printf/ft_transl_chars.c \
+	${SRC_DIR}/ft_printf/ft_transl_digits.c \
+	${SRC_DIR}/ft_printf/ft_transl_no.c \
+	${SRC_DIR}/ft_printf/ft_transl_udigits.c ${SRC_DIR}/ft_printf/t_print.c
 
 OBJS = ${SRCS:${SRC_DIR}/%.c=${OBJ_DIR}/%.o}
 

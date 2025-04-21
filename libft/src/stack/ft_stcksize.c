@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:07:14 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/07 20:09:23 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:17:48 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_stcksize(t_stack **stack)
 		return (0);
 	return ((*stack)->before->index + 1);
 }
-
+/*
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -72,4 +72,4 @@ int	main(void)
 	printf("size of stack = %d\n", ft_stcksize(stack));
 	print_stack(stack);
 	return (0);
-}
+}*/

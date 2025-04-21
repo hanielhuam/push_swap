@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 20:28:32 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/14 20:39:30 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:21:58 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_stckswap(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;

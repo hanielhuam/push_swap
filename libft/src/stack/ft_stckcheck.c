@@ -19,7 +19,6 @@ return value
 1 = the stack doesnt begin with 0
 2 = the stack doesnt end at the same element or isnt in the right order
 */
-
 int	ft_stckcheck(t_stack **stack)
 {
 	t_stack	*temp;

@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 18:11:06 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/07 18:11:11 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:16:12 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_stckadd_front(t_stack **stack, t_stack *new)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!stack || !(*stack) || !new)
 		return ;

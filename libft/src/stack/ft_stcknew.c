@@ -6,13 +6,13 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 18:04:55 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/07 18:10:33 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:14:51 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-t_stack *ft_stcknew(void *content)
+t_stack	*ft_stcknew(void *content)
 {
 	t_stack	*element;
 

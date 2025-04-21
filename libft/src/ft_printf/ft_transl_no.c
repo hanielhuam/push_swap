@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_transl_no.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 21:48:56 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/21 17:58:10 by hmacedo-         ###   ########.fr       */
+/*   Created: 2024/12/16 19:53:19 by hmacedo-          #+#    #+#             */
+/*   Updated: 2024/12/16 20:04:05 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
-int	main(void)
+char	*translate_no(t_print *print)
 {
-	t_stack *stack;
-	int		nu;
-
-	nu = 42;
-	stack = ft_stcknew(&nu);
-	ft_printf("nó da posição núemro %d com número = %d\n", stack->index, *((int *)stack->content));
-	return (0);
+	print->size = ft_strlen(print->original);
+	return (ft_strdup(print->original));
 }

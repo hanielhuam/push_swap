@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 21:17:26 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/13 20:25:57 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:22:46 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 t_stack	*ft_stckmap(t_stack *stack, void *(*f)(void *), void (*del)(void *))
 {
 	t_stack	*start;
-	t_stack *temp;
-	t_stack *newstack;
+	t_stack	*temp;
+	t_stack	*newstack;
 
 	if (ft_stckcheck(&stack))
 		return (NULL);
