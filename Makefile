@@ -25,11 +25,9 @@ ${LIBFT}:
 	make -C ${LIBFT_DIR}
 
 clean:
-	rm -rf ${OBJ_DIR}
-	make -C ${LIBFT_DIR} clean
+	rm -rf ${OBJ_DIR} && make -C ${LIBFT_DIR} clean
 
 fclean: clean
-	rm -rf ${NAME}
-	rm -rf ${LIBFT}
+	rm -rf ${NAME} && rm -rf ${LIBFT}
 
 re: fclean all

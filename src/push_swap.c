@@ -6,12 +6,11 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:48:56 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/20 22:48:25 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 16:53:08 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "push_swap.h"
-#include "ft_stack.h"
+#include "push_swap.h"
 #include <stdio.h>
 
 int	main(void)
