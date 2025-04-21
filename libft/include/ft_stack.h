@@ -6,14 +6,14 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:44:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/17 20:47:23 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/20 21:33:23 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STACK
 # define FT_STACK
 
-#include "../libft.h"
+#include "libft.h"
 
 typedef struct s_stack
 {
