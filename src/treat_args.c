@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   treat_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 21:57:58 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/21 19:07:57 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/21 19:05:10 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/21 21:38:48 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_swap.h"
 
-# include "ft_stack.h"
-# include "ft_printf.h"
-
-char **treat_args(char ** args);
-
-#endif 
+char	**treat_args(int argc, char **argv)
+{
+	if ()	
+}

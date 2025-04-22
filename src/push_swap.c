@@ -6,20 +6,16 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:48:56 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/21 17:58:10 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:08:07 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	t_stack *stack;
-	int		nu;
-
-	nu = 42;
-	stack = ft_stcknew(&nu);
-	ft_printf("nó da posição núemro %d com número = %d\n", stack->index, *((int *)stack->content));
+	if (argc <= 1)
+		return (0);
+	treat_args(argc, argv);
 	return (0);
 }
