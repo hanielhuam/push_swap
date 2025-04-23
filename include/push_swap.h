@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:57:58 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/21 19:07:57 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:13:14 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include "ft_stack.h"
 # include "ft_printf.h"
 
-char **treat_args(char ** args);
+char	**treat_args(int argc, char ** args);
+int		*to_int(char **args);
+t_stack	**init_stack(char **args);
+void	sort_algorithm(t_stack **a, t_stack **b);
+void	sort_three(t_stack **a, t_stack **b);
+void	sort_five(t_stack **a, t_stack **b);
+void	quick_sort(t_stack **a, t_stack **b);
+void	clear_args(char **args);
+void	clear_numbers_args(int *numbers, char **args);
 
 #endif 

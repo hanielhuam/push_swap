@@ -19,6 +19,7 @@ SRCS = ${SRC_DIR}/ft_isalpha.c ${SRC_DIR}/ft_isdigit.c \
 	${SRC_DIR}/ft_putstr_fd.c ${SRC_DIR}/ft_putendl_fd.c \
 	${SRC_DIR}/ft_putnbr_fd.c ${SRC_DIR}/ft_separate.c \
 	${SRC_DIR}/ft_litoa_base.c ${SRC_DIR}/ft_ulitoa_base.c \
+	${SRC_DIR}/ft_atol.c ${SRC_DIR}/ft_isspace.c \
 	${SRC_DIR}/stack/ft_stcknew.c ${SRC_DIR}/stack/ft_stckadd_front.c \
 	${SRC_DIR}/stack/ft_stcksize.c ${SRC_DIR}/stack/ft_stcklast.c \
 	${SRC_DIR}/stack/ft_stckadd_back.c ${SRC_DIR}/stack/ft_stckdelone.c \

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 21:48:56 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/23 17:54:41 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/23 16:43:09 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/23 17:02:41 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_isspace(int c)
 {
-	int	*numbers;
-
-	numbers = to_int(treat_args(argc, argv));
-	if (!numbers)
-		return (-1);
-	while (numbers)
-		ft_printf("%d\n", *numbers++);
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
 	return (0);
 }

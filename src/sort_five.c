@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 21:48:56 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/23 17:54:41 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/22 20:40:16 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/22 20:42:05 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_five(t_stack **a, t_stack **b)
 {
-	int	*numbers;
-
-	numbers = to_int(treat_args(argc, argv));
-	if (!numbers)
-		return (-1);
-	while (numbers)
-		ft_printf("%d\n", *numbers++);
-	return (0);
+	(void)a;
+	(void)b;
 }

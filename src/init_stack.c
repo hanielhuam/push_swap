@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 21:48:56 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/23 17:54:41 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/22 20:34:38 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/22 20:46:53 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_stack	**init_stack(char **args)
 {
-	int	*numbers;
+	t_stack **stack;
 
-	numbers = to_int(treat_args(argc, argv));
-	if (!numbers)
-		return (-1);
-	while (numbers)
-		ft_printf("%d\n", *numbers++);
-	return (0);
+	stack = NULL;
+	(void)args;
+	return (stack);
 }

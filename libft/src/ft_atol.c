@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 12:45:13 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/23 17:12:48 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/23 16:32:59 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/23 17:13:56 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
 	char	signal;
-	int		result;
+	long	result;
 
 	while (ft_isspace(*nptr))
 		nptr++;
@@ -35,7 +35,7 @@ int	ft_atoi(const char *nptr)
 #include <stdio.h>
 int	main(void)
 {
-	printf("%d\n", ft_atoi("\n\f-199a4"));
-	printf("%d\n", atoi("\n\f-199a4"));
+	printf("%ld\n", ft_atol("   -44234"));
+	//printf("%ld\n", atol("44"));
 	return (0);
 }*/
