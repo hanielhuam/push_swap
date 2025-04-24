@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:32:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/23 17:45:20 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/23 21:41:39 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,51 +31,55 @@ static int verify_num(char *arg)
 		i++;
 	while (arg[i])
 	{
-		if (!ft_isdigit(arg[i]))
+		if (!ft_isdigit(arg[i++]))
 			return (1);
 	}
 	return (0);
 }
 
-int	check_repeat(int *numbers, int nu, int index)
+static int	check_repeat(int **numbers, int *nu, int index)
 {
 	int	i;
 
 	i = 0;
 	while (i < index)
 	{
-		if (numbers[i] == nu)
+		if (*numbers[i] == *nu)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-static int	num_builder(int *numbers, char **args, int index)
+static int	*num_builder(int **numbers, char **args, int index)
 {
-	long	temp;
+	long	templ;
+	int		*tempi;
+
 	if (verify_num(args[index]))
-		return (0);
-	temp = ft_atol(args[index]);
-	if (temp > INT_MAX || temp < INT_MIN)
-		return (0);
-	if (check_repeat(numbers, (int)temp, index))
-		return (0);
-	numbers[index] = (int)temp;
-	return (numbers[index]);
+		return (NULL);
+	templ = ft_atol(args[index]);
+	if (templ > INT_MAX || templ < INT_MIN)
+		return (NULL);
+	tempi = ft_calloc(1, sizeof(int));
+	*tempi = (int)templ;
+	if (check_repeat(numbers, tempi, index))
+		return (NULL);
+	numbers[index] = tempi;
+	return (tempi);
 }
 
-int	*to_int(char **args)
+int	**to_int(char **args)
 {
-	int	*numbers;
+	int	**numbers;
 	int	i;
 
 	if (!args || !args[0])
 		return (NULL);
-	numbers = ft_calloc(count_args(args) + 1, sizeof(int));
+	numbers = ft_calloc(count_args(args) + 1, sizeof(int *));
 	if (!numbers)
 	{
-		free(args);
+		clear_args(args);
 		return (NULL);
 	}
 	i = 0;
@@ -83,6 +87,7 @@ int	*to_int(char **args)
 	{
 		if (!num_builder(numbers, args, i++))
 		{
+			ft_printf("Error\n");
 			clear_numbers_args(numbers, args);
 			return (NULL);
 		}
