@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 19:05:10 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/22 19:27:04 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:51:17 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static char	*joinall_args(int argc, char **argv)
 {
-	char *result;
-	char *temp;
-	int	i;
+	char	*result;
+	char	*temp;
+	int		i;
 
 	result = ft_strdup(argv[1]);
 	if (!result)
 		return (NULL);
 	i = 2;
-	while(i < argc)
+	while (i < argc)
 	{
 		temp = ft_strjoin(result, " ");
 		free(result);
@@ -39,13 +39,23 @@ static char	*joinall_args(int argc, char **argv)
 char	**treat_args(int argc, char **argv)
 {
 	char	**result;
+	char	*join;
+
 	if (argc <= 1)
 		return (NULL);
-	result = ft_split(joinall_args(argc, argv), ' ');
-	if (!result || !result[0])
+	join = joinall_args(argc, argv);
+	if (!join)
 	{
 		ft_putstr_fd("alocation error", 2);
 		return (NULL);
 	}
+	result = ft_split(join, ' ');
+	if (!result || !result[0])
+	{
+		free(join);
+		ft_putstr_fd("alocation error", 2);
+		return (NULL);
+	}
+	free(join);
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:34:38 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/22 20:46:53 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:52:47 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	**init_stack(char **args)
 {
-	t_stack **stack;
+	t_stack	**stack;
 
 	stack = NULL;
 	(void)args;

@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:58:22 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/23 20:37:44 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:47:30 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	clear_args(char **args)
 	int	i;
 
 	i = 0;
-	while(args[i])
+	while (args[i])
 		free(args[i++]);
 	free(args);
 }

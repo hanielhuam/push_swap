@@ -6,29 +6,31 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:32:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/23 21:41:39 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:14:37 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t count_args(char **args)
+static size_t	count_args(char **args)
 {
 	size_t	i;
 
 	i = 0;
-	while(args[i])
+	while (args[i])
 		i++;
-	return i;
+	return (i);
 }
 
-static int verify_num(char *arg)
+static int	verify_num(char *arg)
 {
 	int	i;
 
 	i = 0;
 	if (arg[i] == '+' || arg[i] == '-')
 		i++;
+	if (!ft_isdigit(arg[i++]))
+		return (1);
 	while (arg[i])
 	{
 		if (!ft_isdigit(arg[i++]))
@@ -83,7 +85,7 @@ int	**to_int(char **args)
 		return (NULL);
 	}
 	i = 0;
-	while(args[i])
+	while (args[i])
 	{
 		if (!num_builder(numbers, args, i++))
 		{
