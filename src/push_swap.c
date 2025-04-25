@@ -14,14 +14,16 @@
 
 static void print_nodes(t_stack **a, t_stack **b, int first)
 {
-		if ((*a)->index != 0 || fisrt)
+		if (first)
+			ft_printf("  A  |  B  \n");
+		if (*a && ((*a)->index != 0 || first))
 		{
 			ft_printf(" %d  |", *((int *)(*a)->content));
 			*a = (*a)->next;
 		}
 		else
 			ft_printf("    |");
-		if ((*b)->index != 0 || first)
+		if (*b && ((*b)->index != 0 || first))
 		{
 			ft_printf("  %d \n", *((int *)(*b)->content));
 			*b = (*b)->next;
@@ -32,17 +34,12 @@ static void print_nodes(t_stack **a, t_stack **b, int first)
 
 static void show_stacks(t_stack **a, t_stack **b)
 {
-	t_stack	*node_a;
-	t_stack *node_b;
-
 	if (!a || !b)
 		return ;
-	node_a = *a;
-	node_b = *b;
-	print_nodes(&node_a, &node_b, 1);
-	while (node_a->index == || node_b != *b)
+	print_nodes(a, b, 1);
+	while ((*a && (*a)->index != 0) || (*b && (*b)->index != 0))
 	{
-		print_nodes(&node_a, &node_b, 0);
+		print_nodes(a, b, 0);
 	}
 }
 
