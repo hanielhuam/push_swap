@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:58:22 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/24 20:48:31 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:23:29 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	clear_numbers(int **numbers)
 void	clear_stack(t_stack **stack)
 {
 	ft_stckclear(stack, free);
+	free(stack);
 }
 
 void	clear_numbers_args(int **numbers, char **args)

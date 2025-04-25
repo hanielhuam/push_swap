@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 18:07:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/21 18:21:04 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:50:59 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 void	ft_stckclear(t_stack **stack, void (*del)(void *))
 {
+	t_stack	*init;
 	t_stack	*temp;
 
-	if (ft_stckcheck(stack) != 0)
+	if (!*stack)
 		return ;
-	temp = (*stack)->next;
-	while (temp != *stack)
+	init = *stack;
+	*stack = (*stack)->next;
+	while (*stack != init)
 	{
-		ft_stckdelone(temp, del);
-		temp = temp->next;
+		temp = (*stack)->next;
+		ft_stckdelone(*stack, del);
+		*stack = temp;
 	}
 	ft_stckdelone(*stack, del);
 	*stack = NULL;

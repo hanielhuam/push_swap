@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 DBGFLAGS = -g 
 SRC_DIR = src
 OBJ_DIR = obj

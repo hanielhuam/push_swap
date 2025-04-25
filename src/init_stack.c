@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:34:38 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/24 20:40:26 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:56:09 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ t_stack	**init_stack(int **numbers)
 		clear_numbers_stack(numbers, stack);
 		return (NULL);
 	}
-	clear_numbers(numbers);
+	free(numbers);
 	return (stack);
 }
