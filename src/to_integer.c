@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:32:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/24 16:14:37 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 20:35:59 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,12 @@ static int	*num_builder(int **numbers, char **args, int index)
 	if (templ > INT_MAX || templ < INT_MIN)
 		return (NULL);
 	tempi = ft_calloc(1, sizeof(int));
+	if (!tempi)
+	{
+		ft_putstr_fd("Allocation Error!", 2);
+		clear_numbers_args(numbers, args);
+		exit(-1);
+	}
 	*tempi = (int)templ;
 	if (check_repeat(numbers, tempi, index))
 		return (NULL);
@@ -81,6 +87,7 @@ int	**to_int(char **args)
 	numbers = ft_calloc(count_args(args) + 1, sizeof(int *));
 	if (!numbers)
 	{
+		ft_putstr_fd("Allocation Error!", 2);
 		clear_args(args);
 		return (NULL);
 	}
