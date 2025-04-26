@@ -10,7 +10,8 @@ INCLUDE = -Iinclude -I${LIBFT_DIR}/include
 SRCS = ${SRC_DIR}/push_swap.c ${SRC_DIR}/treat_args.c \
 	   ${SRC_DIR}/to_integer.c ${SRC_DIR}/init_stack.c \
 	   ${SRC_DIR}/sort_three.c ${SRC_DIR}/sort_five.c ${SRC_DIR}/quick_sort.c \
-	   ${SRC_DIR}/sort_algorithm.c ${SRC_DIR}/clear_args.c
+	   ${SRC_DIR}/sort_algorithm.c ${SRC_DIR}/clear_args.c \
+	   ${SRC_DIR}/print_stack.c ${SRC_DIR}/cehck_order.c
 OBJS = ${SRCS:${SRC_DIR}/%.c=${OBJ_DIR}/%.o}
 
 NAME = push_swap
