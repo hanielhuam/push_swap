@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:49:40 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/25 21:19:42 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/26 19:00:43 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	sort_algorithm(t_stack **a, t_stack **b)
 	int	size;
 
 	size = ft_stcksize(a);
-	//checar se já está ordenado ou tamanho é igual a 1; retorna sem fazer nada
 	if (size == 1 || check_order(*a))
 		return ;
+	ft_printf("Passou por aqui");
 	if (size <= 3)
 		sort_three(a, b);
 }
