@@ -6,14 +6,18 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:37:11 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/22 20:40:08 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/26 21:58:28 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack **a, t_stack **b)
+static void	sort_two(t_stack **a)
 {
-	(void)a;
-	(void)b;
+	
+}
+
+void	sort_three(t_stack **a)
+{
+	
 }
