@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:57:58 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/25 21:21:57 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/26 21:02:48 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,18 @@ int		**to_int(char **args);
 t_stack	**init_stack(int **args);
 int		check_order(t_stack *stack);
 void	sort_algorithm(t_stack **a, t_stack **b);
-void	sort_three(t_stack **a, t_stack **b);
+void	sort_three(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b);
 void	quick_sort(t_stack **a, t_stack **b);
 void	show_stacks(t_stack **a, t_stack **b);
+void	push_a(t_stack **a, t_stack **b);
+void	push_b(t_stack **a, t_stack **b);
+void	rotate_a(t_stack **a, int reverse);
+void	rotate_b(t_stack **b, int reverse);
+void	r_rotate(t_stack **a, t_stack **b, int reverse);
+void	swap_a(t_stack **a);
+void	swap_b(t_stack **b);
+void	s_swap(t_stack **a, t_stack **b);
 void	clear_args(char **args);
 void	clear_numbers(int **numbers);
 void	clear_numbers_args(int **numbers, char **args);

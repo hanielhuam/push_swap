@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_algorithm.c                                   :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 20:49:40 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/26 20:06:38 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/04/26 21:06:21 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/04/26 21:26:02 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_algorithm(t_stack **a, t_stack **b)
+void	psuh_a(t_stack **a, t_stack **b)
 {
-	int	size;
+	ft_stckpuh(b, a);
+	ft_printf("pa\n");
+}
 
-	size = ft_stcksize(a);
-	if (size == 1 || check_order(*a))
-		return ;
-	if (size <= 3)
-		sort_three(a);
-	else if (size <= 5)
-		sort_five(a, b);
-	else
-		quick_sort(a, b);
+void	push_b(t_stack **a, t_stack **b)
+{
+	ft_stckpuh(a, b);
+	ft_printf("pb\n");
 }
