@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:07:14 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/21 18:17:48 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:54:05 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,20 @@
 
 int	ft_stcksize(t_stack **stack)
 {
-	if (ft_stckcheck(stack))
-		return (0);
-	return ((*stack)->before->index + 1);
+	t_stack	*temp;
+	int	i;
+
+	i = 0;
+	if (!stack || !*stack)
+		return (i);
+	i++;
+	temp = *stack->next;
+	while (temp != *stack)
+	{
+		i++;
+		temp = temp->next;
+	}
+	return (i);
 }
 /*
 #include <stdio.h>

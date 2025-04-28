@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:52:19 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/17 21:30:31 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:05:13 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,47 @@ static void	plus_one(t_stack *node)
 	node->index += 1;
 }
 
+static t_stack	*handle_stack_from(t_stack **stack_from)
+{
+	t_stack	*temp;
+
+	temp = *stack_from;
+	if (ft_stcksize(stack_from) == 1)
+		*stack_from = NULL;
+	else
+	{
+		*stack_from = (*stack_from)->next;
+		(*stack_from)->before = temp->before;
+		(*stack_from)->before->next = *stack_from;
+		ft_stckiter_s(*stack_from, minus_one);
+	}
+	return (temp);
+}
+
+static void	handle_stack_to(t_stack *new_node, t_stack **stack_to)
+{	
+	new_node->index = 0;
+	if (ft_stcksize(stack_to))
+	{
+		ft_stckiter_s(*stack_to, plus_one);
+		new_node->next = *stack_to;
+		new_node->before = (*stack_to)->before;
+		new_node->before->next = new_node;
+		new_node->next->before = new_node;
+	}
+	*stack_to = new_node;
+}
+
 void	ft_stckpush(t_stack **stack_from, t_stack **stack_to)
 {
 	t_stack	*temp;
 
-	if (ft_stckcheck(stack_from) || ft_stckcheck(stack_to))
+	if (!stack_from || !*stack_from || !stack_to)
 		return ;
-	temp = *stack_from;
-	*stack_from = (*stack_from)->next;
-	(*stack_from)->before = temp->before;
-	(*stack_from)->before->next = *stack_from;
-	ft_stckiter_s(*stack_from, minus_one);
-	ft_stckiter_s(*stack_to, plus_one);
-	temp->next = *stack_to;
-	temp->before = (*stack_to)->before;
-	temp->before->next = temp;
-	temp->next->before = temp;
-	*stack_to = temp;
+	temp = handle_stack_from(stack_from);
+	handle_stack_to(temp, stack_to);
 }
-/*
+
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -84,19 +106,17 @@ int	main(void)
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
-	t_stack *tmp_a;
-	t_stack *tmp_b;
 
-	tmp_a = ft_stcknew(newint_point(11));
-	stack_a = &tmp_a;
-	ft_stckadd_front(stack_a, ft_stcknew(newint_point(10)));
-	ft_stckadd_back(stack_a, ft_stcknew(newint_point(12)));
+	stack_a = ft_calloc(1, sizeof(t_stack *));
+	*stack_a = ft_stcknew(newint_point(11));
+	//ft_stckadd_front(stack_a, ft_stcknew(newint_point(10)));
+	//ft_stckadd_back(stack_a, ft_stcknew(newint_point(12)));
 	printf("STACK A\n");
 	print_stack(stack_a);
-	tmp_b = ft_stcknew(newint_point(111));
-	stack_b = &tmp_b;	
-	ft_stckadd_front(stack_b, ft_stcknew(newint_point(110)));
-	ft_stckadd_back(stack_b, ft_stcknew(newint_point(112)));
+	stack_b = ft_calloc(1, sizeof(t_stack *));
+	//*stack_b = ft_stcknew(newint_point(111));
+	//ft_stckadd_front(stack_b, ft_stcknew(newint_point(110)));
+	//ft_stckadd_back(stack_b, ft_stcknew(newint_point(112)));
 	printf("STACK B\n");
 	print_stack(stack_b);
 	printf("\ndepois da ft_stckpush\n");
@@ -106,4 +126,4 @@ int	main(void)
 	printf("STACK B\n");
 	print_stack(stack_b);
 	return (0);
-}*/
+}
