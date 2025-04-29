@@ -21,7 +21,7 @@ int	ft_stcksize(t_stack **stack)
 	if (!stack || !*stack)
 		return (i);
 	i++;
-	temp = *stack->next;
+	temp = (*stack)->next;
 	while (temp != *stack)
 	{
 		i++;
@@ -53,13 +53,16 @@ void	print_stack(t_stack **stack)
 {
 	t_stack	*temp;
 
-	print_t_stack(*stack);
-	temp = (*stack)->next;
-	while (temp != *stack)
+	if (stack && *stack)
 	{
-		printf("\n");
-		print_t_stack(temp);
-		temp = temp->next;
+		print_t_stack(*stack);
+		temp = (*stack)->next;
+		while (temp != *stack)
+		{
+			printf("\n");
+			print_t_stack(temp);
+			temp = temp->next;
+		}
 	}
 	printf("\n");
 }
@@ -67,20 +70,26 @@ void	print_stack(t_stack **stack)
 int	main(void)
 {
 	t_stack	**stack;
-	t_stack *tmp;
 
-	tmp = ft_stcknew(newint_point(42));
-	stack = &tmp;
+	stack = NULL;
 	printf("primeiro print\n");
 	printf("size of stack = %d\n", ft_stcksize(stack));
 	print_stack(stack);
-	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
-	printf("segundo print\n");
+	stack = ft_calloc(1, sizeof(t_stack *));
+	printf("segundo  print\n");
 	printf("size of stack = %d\n", ft_stcksize(stack));
 	print_stack(stack);
-	ft_stckadd_front(stack, ft_stcknew(newint_point(84)));
+	*stack = ft_stcknew(newint_point(42));
 	printf("terceiro print\n");
 	printf("size of stack = %d\n", ft_stcksize(stack));
 	print_stack(stack);
-	return (0);
+	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
+	printf("quarto print\n");
+	printf("size of stack = %d\n", ft_stcksize(stack));
+	print_stack(stack);
+	ft_stckadd_front(stack, ft_stcknew(newint_point(84)));
+	printf("quinto print\n");
+	printf("size of stack = %d\n", ft_stcksize(stack));
+	print_stack(stack);
+		return (0);
 }*/

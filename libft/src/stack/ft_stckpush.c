@@ -108,13 +108,13 @@ int	main(void)
 	t_stack	**stack_b;
 
 	stack_a = ft_calloc(1, sizeof(t_stack *));
-	*stack_a = ft_stcknew(newint_point(11));
+	//*stack_a = ft_stcknew(newint_point(11));
 	//ft_stckadd_front(stack_a, ft_stcknew(newint_point(10)));
 	//ft_stckadd_back(stack_a, ft_stcknew(newint_point(12)));
 	printf("STACK A\n");
 	print_stack(stack_a);
 	stack_b = ft_calloc(1, sizeof(t_stack *));
-	//*stack_b = ft_stcknew(newint_point(111));
+	*stack_b = ft_stcknew(newint_point(111));
 	//ft_stckadd_front(stack_b, ft_stcknew(newint_point(110)));
 	//ft_stckadd_back(stack_b, ft_stcknew(newint_point(112)));
 	printf("STACK B\n");
@@ -126,4 +126,4 @@ int	main(void)
 	printf("STACK B\n");
 	print_stack(stack_b);
 	return (0);
-}
+}*/
