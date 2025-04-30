@@ -40,16 +40,20 @@ static t_stack	*handle_stack_from(t_stack **stack_from)
 }
 
 static void	handle_stack_to(t_stack *new_node, t_stack **stack_to)
-{	
+{
 	new_node->index = 0;
-	if (ft_stcksize(stack_to))
+	if (!ft_stcksize(stack_to))
 	{
-		ft_stckiter_s(*stack_to, plus_one);
-		new_node->next = *stack_to;
-		new_node->before = (*stack_to)->before;
-		new_node->before->next = new_node;
-		new_node->next->before = new_node;
+		new_node->next = new_node;
+		new_node->before = new_node;
+		*stack_to = new_node;
+		return ;
 	}
+	ft_stckiter_s(*stack_to, plus_one);
+	new_node->next = *stack_to;
+	new_node->before = (*stack_to)->before;
+	new_node->before->next = new_node;
+	new_node->next->before = new_node;
 	*stack_to = new_node;
 }
 
@@ -108,13 +112,13 @@ int	main(void)
 	t_stack	**stack_b;
 
 	stack_a = ft_calloc(1, sizeof(t_stack *));
-	//*stack_a = ft_stcknew(newint_point(11));
-	//ft_stckadd_front(stack_a, ft_stcknew(newint_point(10)));
+	*stack_a = ft_stcknew(newint_point(11));
+	ft_stckadd_front(stack_a, ft_stcknew(newint_point(10)));
 	//ft_stckadd_back(stack_a, ft_stcknew(newint_point(12)));
 	printf("STACK A\n");
 	print_stack(stack_a);
 	stack_b = ft_calloc(1, sizeof(t_stack *));
-	*stack_b = ft_stcknew(newint_point(111));
+	//*stack_b = ft_stcknew(newint_point(111));
 	//ft_stckadd_front(stack_b, ft_stcknew(newint_point(110)));
 	//ft_stckadd_back(stack_b, ft_stcknew(newint_point(112)));
 	printf("STACK B\n");
@@ -126,4 +130,4 @@ int	main(void)
 	printf("STACK B\n");
 	print_stack(stack_b);
 	return (0);
-}*/
+}

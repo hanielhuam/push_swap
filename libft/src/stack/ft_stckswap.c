@@ -29,7 +29,7 @@ void	ft_stckswap(t_stack **stack)
 	temp->index += 1;
 	(*stack)->index -= 1;
 }
-/*
+
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -68,19 +68,20 @@ void	print_stack(t_stack **stack)
 	}
 	printf("\n");
 }
-
+/*
 int	main(void)
 {
 	t_stack	**stack;
-	t_stack *tmp;
-
-	tmp = ft_stcknew(newint_point(42));
-	stack = &tmp;
+	
+	stack = ft_calloc(1, sizeof(t_stack *));
+	*stack = ft_stcknew(newint_point(42));
 	ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
 	ft_stckadd_back(stack, ft_stcknew(newint_point(84)));
 	print_stack(stack);
 	printf("depois da ft_stckswap\n");
 	ft_stckswap(stack);
 	print_stack(stack);
+	ft_stckclear(stack, free);
+	free(stack);
 	return (0);
 }*/

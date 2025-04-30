@@ -24,19 +24,19 @@ static void	plusone(t_stack *node)
 
 void	ft_stckrotate(t_stack **stack, int reverse)
 {
-	if (ft_stckcheck(stack))
+	if (!stack || !*stack || (*stack)->index != 0 || !ft_stcksize(stack))
 		return ;
 	if (!reverse)
-	{
-		ft_stckiter_s(*stack, plusone);
-		*stack = (*stack)->before;
-		(*stack)->index = 0;
-	}
-	else
 	{
 		ft_stckiter_s(*stack, minusone);
 		(*stack)->index = (*stack)->before->index + 1;
 		*stack = (*stack)->next;
+	}
+	else
+	{
+		ft_stckiter_s(*stack, plusone);
+		*stack = (*stack)->before;
+		(*stack)->index = 0;
 	}
 }
 /*
@@ -81,19 +81,18 @@ void	print_stack(t_stack **stack)
 
 int	main(void)
 {
-	t_stack	**stack_a;
-	t_stack *tmp_a;
+	t_stack	**stack;
 
-	tmp_a = ft_stcknew(newint_point(42));
-	stack_a = &tmp_a;
-	ft_stckadd_front(stack_a, ft_stcknew(newint_point(24)));
-	ft_stckadd_back(stack_a, ft_stcknew(newint_point(84)));
-	print_stack(stack_a);
+	stack = ft_calloc(1, sizeof(t_stack *));
+	*stack = ft_stcknew(newint_point(42));
+	//ft_stckadd_front(stack, ft_stcknew(newint_point(24)));
+	//ft_stckadd_back(stack, ft_stcknew(newint_point(84)));
+	print_stack(stack);
 	printf("\ndepois da ft_stckrotate\n");
-	ft_stckrotate(stack_a, 0);
-	print_stack(stack_a);
+	ft_stckrotate(stack, 0);
+	print_stack(stack);
 	printf("\ndepois da ft_stckrotate reverso\n");
-	ft_stckrotate(stack_a, 1);
-	print_stack(stack_a);
+	ft_stckrotate(stack, 1);
+	print_stack(stack);
 	return (0);
-}*/
+}/*
