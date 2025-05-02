@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:07:14 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/28 20:54:05 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/01 21:19:03 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_stcksize(t_stack **stack)
 {
 	t_stack	*temp;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!stack || !*stack)

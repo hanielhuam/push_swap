@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 20:28:32 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/21 18:21:58 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/01 21:20:14 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_stckswap(t_stack **stack)
 	temp->index += 1;
 	(*stack)->index -= 1;
 }
-
+/*
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -68,7 +68,7 @@ void	print_stack(t_stack **stack)
 	}
 	printf("\n");
 }
-/*
+
 int	main(void)
 {
 	t_stack	**stack;

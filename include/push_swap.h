@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:57:58 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/26 21:02:48 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:31:31 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ void	clear_numbers(int **numbers);
 void	clear_numbers_args(int **numbers, char **args);
 void	clear_stack(t_stack **stack);
 void	clear_numbers_stack(int **numbers, t_stack **stack);
+t_stack	*find_maxnode(t_stack **stack);
+t_stack	*find_minnode(t_stack **stack);
+int		find_maxint(t_stack **stack);
+int		find_minint(t_stack **stack);
 
 #endif 

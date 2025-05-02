@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 21:06:21 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/26 21:26:02 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/01 21:01:40 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	psuh_a(t_stack **a, t_stack **b)
 {
-	ft_stckpuh(b, a);
+	ft_stckpush(b, a);
 	ft_printf("pa\n");
 }
 
 void	push_b(t_stack **a, t_stack **b)
 {
-	ft_stckpuh(a, b);
+	ft_stckpush(a, b);
 	ft_printf("pb\n");
 }

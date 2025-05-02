@@ -6,7 +6,7 @@
 /*   By: hmacedo- <hmacedo-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:52:19 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/28 20:05:13 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/01 21:06:28 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_stckpush(t_stack **stack_from, t_stack **stack_to)
 	temp = handle_stack_from(stack_from);
 	handle_stack_to(temp, stack_to);
 }
-
+/*
 #include <stdio.h>
 
 int	*newint_point(int nu)
@@ -118,7 +118,7 @@ int	main(void)
 	printf("STACK A\n");
 	print_stack(stack_a);
 	stack_b = ft_calloc(1, sizeof(t_stack *));
-	//*stack_b = ft_stcknew(newint_point(111));
+	// *stack_b = ft_stcknew(newint_point(111));
 	//ft_stckadd_front(stack_b, ft_stcknew(newint_point(110)));
 	//ft_stckadd_back(stack_b, ft_stcknew(newint_point(112)));
 	printf("STACK B\n");
@@ -130,4 +130,4 @@ int	main(void)
 	printf("STACK B\n");
 	print_stack(stack_b);
 	return (0);
-}
+}*/
