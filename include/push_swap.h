@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:57:58 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/01 19:31:31 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/03 17:13:59 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ t_stack	*find_maxnode(t_stack **stack);
 t_stack	*find_minnode(t_stack **stack);
 int		find_maxint(t_stack **stack);
 int		find_minint(t_stack **stack);
+int		move_2b(t_stack **a, t_stack **b, t_stack *node);
+void	move_2a(t_stack **a, t_stack **b, t_stack *node);
+int		compare_nodes(t_stack *node1, t_stack *node2);
 
 #endif 

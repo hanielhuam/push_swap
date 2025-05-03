@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   move_2a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/26 21:06:21 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/03 16:23:18 by hmacedo-         ###   ########.fr       */
+/*   Created: 2025/05/03 16:19:35 by hmacedo-          #+#    #+#             */
+/*   Updated: 2025/05/03 17:00:30 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_stack **a, t_stack **b)
+void	move_2a(t_stack **a, t_stack **b, t_stack *node)
 {
-	ft_stckpush(b, a);
-	ft_printf("pa\n");
-}
+	int	size;
 
-void	push_b(t_stack **a, t_stack **b)
-{
-	ft_stckpush(a, b);
-	ft_printf("pb\n");
+	size = ft_stcksize(a);
+	while (node->index != 0)
+	{
+		if (node->index <= size / 2)
+			rotate_b(b, 0);
+		else
+			rotate_b(b, 1);
+	}
+	push_a(a, b);
 }

@@ -12,7 +12,8 @@ SRCS = ${SRC_DIR}/push_swap.c ${SRC_DIR}/treat_args.c \
 	   ${SRC_DIR}/sort_three.c ${SRC_DIR}/sort_five.c ${SRC_DIR}/quick_sort.c \
 	   ${SRC_DIR}/sort_algorithm.c ${SRC_DIR}/clear_args.c \
 	   ${SRC_DIR}/print_stack.c ${SRC_DIR}/check_order.c ${SRC_DIR}/rotate.c \
-	   ${SRC_DIR}/swap.c ${SRC_DIR}/push.c ${SRC_DIR}/find_extremes.c
+	   ${SRC_DIR}/swap.c ${SRC_DIR}/push.c ${SRC_DIR}/find_extremes.c \
+	   ${SRC_DIR}/move_2b.c ${SRC_DIR}/move_2a.c ${SRC_DIR}/compare.c
 OBJS = ${SRCS:${SRC_DIR}/%.c=${OBJ_DIR}/%.o}
 
 NAME = push_swap

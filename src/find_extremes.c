@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:41:25 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/01 21:21:34 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/03 15:56:17 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_stack	*find_minnode(t_stack **stack)
 	temp = (*stack)->next;
 	while (temp != *stack)
 	{
-		if (*((int *)min->content) < *((int *)temp->content))
+		if (*((int *)min->content) > *((int *)temp->content))
 			min = temp;
 		temp = temp->next;
 	}
