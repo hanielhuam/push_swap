@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:40:16 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/03 17:13:11 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/04 21:01:56 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,55 @@ static void	sort_four(t_stack **a, t_stack **b)
 	move_2a(a, b, *b);
 }
 
+static int	bring_minors_2b(t_stack **a, t_stack **b, t_list *minors, int size)
+{
+	t_list	*init;
+	t_stack	*temp;
+
+	init = minors;
+	find_minnodes(*a, minors, size / 2);
+	while (exist_content(minors))
+	{
+		temp = best_node_2push(minors, ft_stcksize(a));
+		if (move_2b(a, b, temp))
+		{
+			erase_content(init);
+			return (1);
+		}
+	}
+	return (0);
+}
+
+static void	bring_majors_2a(t_stack **a, t_stack **b, t_list *majors)
+{
+	t_stack	*temp;
+
+	if (!ft_stcksize(b))
+		return ;
+	find_maxnodes(*b, majors, 2);
+	while (exist_content(majors))
+	{
+		temp = best_node_2push(majors, ft_stcksize(b));
+		move_2a(a, b, temp);
+	}
+}
+
 void	sort_five(t_stack **a, t_stack **b)
 {
-	t_list	**menores;
+	int		size;
+	t_list	**minors;
 
-	if (ft_stcksize(a) < 5)
+	size = ft_stcksize(a);
+	if (size < 5)
 	{
 		sort_four(a, b);
 		return ;
 	}
-	(void) menores;
+	minors = init_minorlist((size / 2));
+	if (!minors)
+		return;
+	if (!bring_minors_2b(a, b, *minors, size))
+		sort_three(a);
+	bring_majors_2a(a, b, *minors);
+	clear_minorlist(minors);
 }

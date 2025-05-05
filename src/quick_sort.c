@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:42:13 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/02 21:16:07 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/03 18:22:02 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 		para isso verifique se o número é menor ou maior que a mediana
 		além disso verifique se da para reutilizar algum movimento de a em b
 6 - repetir os passos 4 e 5 até acabar com a lista
-7 - repetir os passos 2 e 3 até a lista for menor que 5 elementos.
+7 - repetir os passos 2 e 3 até a stack a for menor que 5 elementos.
+8 - fazer o algorítmo do retorno a stack a até não tiver nada na stack b
+	verificar se está indo de maneira ordenada.
 */
 void	quick_sort(t_stack **a, t_stack **b)
 {

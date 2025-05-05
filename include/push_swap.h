@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:57:58 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/03 17:13:59 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/04 21:19:42 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,18 @@ void	clear_stack(t_stack **stack);
 void	clear_numbers_stack(int **numbers, t_stack **stack);
 t_stack	*find_maxnode(t_stack **stack);
 t_stack	*find_minnode(t_stack **stack);
+t_list	*find_minnodes(t_stack **stack, t_list *list, int size);
+t_list	*find_maxnodes(t_stack **stack, t_list *list, int size);
+t_list	**init_minorlist(int size);
+t_list	*exist_content(t_list *list);
+void	clear_minorlist(t_list **list);
+void	erase_content(t_list *list);
 int		find_maxint(t_stack **stack);
 int		find_minint(t_stack **stack);
 int		move_2b(t_stack **a, t_stack **b, t_stack *node);
 void	move_2a(t_stack **a, t_stack **b, t_stack *node);
 int		compare_nodes(t_stack *node1, t_stack *node2);
+int		compare_positions(t_list *node1, t_list *node2);
+t_stack	*best_node_2push(t_list *list, int size);
 
 #endif 
