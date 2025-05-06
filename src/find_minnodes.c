@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 16:16:37 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/04 21:40:49 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:36:28 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	contains(t_list *list, t_stack *node)
 {
-	while (!list)
+	while (list)
 	{
 		if (list->content == node)
 			return (1);
@@ -30,7 +30,7 @@ static t_stack	*find_next_min(t_stack *min_node, t_stack *init, t_list *list)
 	temp = min_node->next;
 	while (temp != init)
 	{
-		if (compare_nodes(min_node, temp) > 0 && contains(list, temp))
+		if (compare_nodes(min_node, temp) > 0 && !contains(list, temp))
 			min_node = temp;
 		temp = temp->next;
 	}

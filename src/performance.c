@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 17:10:16 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/04 22:02:28 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/05 20:57:06 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static t_stack	*zero_index(t_list *candidates)
 	t_stack	*temp;
 	while (candidates)
 	{
-		if (!((t_stack *)candidates->content)->index)
+		if (candidates->content && !((t_stack *)candidates->content)->index)
 		{
 			temp = (t_stack *)candidates->content;
 			candidates->content = NULL;
@@ -60,7 +60,7 @@ static t_stack	*closser_2end(t_list *candidates)
 	candidates = closser->next;
 	while (candidates)
 	{
-		if (compare_positions(closser, candidates) < 0)
+		if (candidates->content && compare_positions(closser, candidates) < 0)
 			closser = candidates;
 		candidates = candidates->next;
 	}
@@ -80,7 +80,7 @@ static t_stack	*closser_2start(t_list *candidates)
 	candidates = closser->next;
 	while (candidates)
 	{
-		if (compare_positions(closser, candidates) > 0)
+		if (candidates->content && compare_positions(closser, candidates) > 0)
 			closser = candidates;
 		candidates = candidates->next;
 	}

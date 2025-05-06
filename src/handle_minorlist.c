@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 18:25:17 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/04 20:12:28 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:19:18 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	**init_minorlist(int size)
 	if (!list)
 		return (NULL);
 	i = 0;
-	while (i < (size / 2))
+	while (i < size)
 	{
 		temp = ft_lstnew(NULL);
 		if (!temp)
@@ -39,7 +39,7 @@ t_list	**init_minorlist(int size)
 
 t_list	*exist_content(t_list *list)
 {
-	while (!list)
+	while (list)
 	{
 		if (list->content != NULL)
 			return (list);

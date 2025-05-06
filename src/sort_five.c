@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:40:16 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/04 21:01:56 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:26:39 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	bring_minors_2b(t_stack **a, t_stack **b, t_list *minors, int size)
 	t_stack	*temp;
 
 	init = minors;
-	find_minnodes(*a, minors, size / 2);
+	find_minnodes(a, minors, size / 2);
 	while (exist_content(minors))
 	{
 		temp = best_node_2push(minors, ft_stcksize(a));
@@ -48,11 +48,13 @@ static void	bring_majors_2a(t_stack **a, t_stack **b, t_list *majors)
 
 	if (!ft_stcksize(b))
 		return ;
-	find_maxnodes(*b, majors, 2);
+	find_maxnodes(b, majors, 2);
 	while (exist_content(majors))
 	{
 		temp = best_node_2push(majors, ft_stcksize(b));
 		move_2a(a, b, temp);
+		if (compare_nodes(*a, (*a)->next) > 0)
+			swap_a(a);
 	}
 }
 
