@@ -91,10 +91,13 @@ static t_stack	*closser_2start(t_list *candidates)
 
 t_stack	*best_node_2push(t_list *candidates, int stack_size)
 {
+	t_stack	*is_zero;
+
 	if (!exist_content(candidates))
 		return (NULL);
-	if (zero_index(candidates))
-		return zero_index(candidates);
+	is_zero = zero_index(candidates);
+	if (is_zero)
+		return (is_zero);
 	if (which_way_2rotate(candidates, stack_size))
 		return (closser_2end(candidates));
 	return (closser_2start(candidates));

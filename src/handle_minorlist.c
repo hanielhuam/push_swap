@@ -65,7 +65,7 @@ void	clear_minorlist(t_list **list)
 	if (!list)
 		return ;
 	init = list;
-	while (!*list)
+	while (*list)
 	{
 		temp = (*list)->next;
 		free(*list);
