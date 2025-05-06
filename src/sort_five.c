@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:40:16 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/05 21:26:39 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:19:34 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	sort_five(t_stack **a, t_stack **b)
 	}
 	minors = init_minorlist((size / 2));
 	if (!minors)
-		return;
+		return ;
 	if (!bring_minors_2b(a, b, *minors, size))
 		sort_three(a);
 	bring_majors_2a(a, b, *minors);

@@ -6,16 +6,16 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 17:10:16 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/05 20:57:06 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:18:00 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int which_way_2rotate(t_list *candidates, int size)
+static int	which_way_2rotate(t_list *candidates, int size)
 {
 	int	rotate_steps;
-	int r_rotate_steps;
+	int	r_rotate_steps;
 
 	rotate_steps = 0;
 	r_rotate_steps = 0;
@@ -36,6 +36,7 @@ static int which_way_2rotate(t_list *candidates, int size)
 static t_stack	*zero_index(t_list *candidates)
 {
 	t_stack	*temp;
+
 	while (candidates)
 	{
 		if (candidates->content && !((t_stack *)candidates->content)->index)

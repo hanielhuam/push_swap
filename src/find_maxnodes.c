@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 16:18:57 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/05 19:42:34 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:15:38 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static t_stack	*find_next_max(t_stack *max_node, t_stack *init, t_list *list)
 t_list	*find_maxnodes(t_stack **stack, t_list *majors, int size)
 {
 	int		i;
-	t_stack *max_node;
+	t_stack	*max_node;
 	t_list	*init_list;
 
 	if (ft_stcksize(stack) < size)

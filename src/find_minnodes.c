@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 16:16:37 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/05 19:36:28 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:14:56 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static t_stack	*find_next_min(t_stack *min_node, t_stack *init, t_list *list)
 t_list	*find_minnodes(t_stack **stack, t_list *minors, int size)
 {
 	int		i;
-	t_stack *min_node;
+	t_stack	*min_node;
 	t_list	*init_list;
 
 	if (ft_stcksize(stack) <= size)
