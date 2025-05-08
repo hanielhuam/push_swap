@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:41:25 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/04 16:18:10 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 20:30:55 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,30 @@ t_stack	*find_minnode(t_stack **stack)
 	return (min);
 }
 
-int	find_maxint(t_stack **stack)
+static int count_content(t_list *list)
 {
-	return (*((int *)find_maxnode(stack)->content));
+	int	i;
+
+	i = 0;
+	while (list && list->content)
+	{
+		list = list->next;
+		i++;
+	}
+	return (i);
 }
 
-int	find_minint(t_stack **stack)
+int	get_midian(t_list	*ordered_list)
 {
-	return (*((int *)find_minnode(stack)->content));
+	int	size;
+	int	i;
+
+	size = count_content(ordered_list);
+	i = 0;
+	while (i < size / 2)
+	{
+		ordered_list = ordered_list->next;
+		i++;
+	}
+	return (*((int *)((t_stack *)ordered_list->content)->content));
 }

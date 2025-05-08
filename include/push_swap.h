@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:57:58 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/04 21:19:42 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 20:19:21 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ t_list	**init_minorlist(int size);
 t_list	*exist_content(t_list *list);
 void	clear_minorlist(t_list **list);
 void	erase_content(t_list *list);
-int		find_maxint(t_stack **stack);
-int		find_minint(t_stack **stack);
+int		get_midian(t_list *ordered_list);
 int		move_2b(t_stack **a, t_stack **b, t_stack *node);
+int		move_2b_midian(t_stack **a, t_stack **b, t_stack *node, int midian);
 void	move_2a(t_stack **a, t_stack **b, t_stack *node);
 int		compare_nodes(t_stack *node1, t_stack *node2);
 int		compare_positions(t_list *node1, t_list *node2);
