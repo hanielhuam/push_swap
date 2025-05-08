@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:42:13 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/07 21:52:53 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/08 20:35:00 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,18 @@ static void	bring_majors_2a(t_stack **a, t_stack **b, t_list *majors)
 
 static int	calc_list_size(t_stack **a)
 {
-	if (ft_stcksize(a) < 30)
+	if (ft_stcksize(a) < 10)
 		return (2);
+	if (ft_stcksize(a) < 20)
+		return (4);
+	if (ft_stcksize(a) < 50)
+		return (12);
+	if (ft_stcksize(a) < 100)
+		return (20);
+	if (ft_stcksize(a) < 250)
+		return (35);
+	if (ft_stcksize(a) < 500)
+		return (50);
 	else
 		return (ft_stcksize(a) / 10);
 }
