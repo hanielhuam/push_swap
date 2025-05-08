@@ -6,33 +6,17 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:42:13 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/07 20:00:27 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 21:52:53 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-1 - ver qual é o tamanho do chunck que seria size/5
-2 - retornar uma lista dos n menores
-	saber preencher a lista quando for menor que n;
-3 - pegar o nó da mediana dos n menosres
-4 - calcular quel é o melhor nó para fazer o push b
-   dentro disso tem que reordenar a lista para deixar nulo como a última posiçã
-5 - enviar o melhor nó para b
-	colocar o nó no melhor lugar em b 
-		para isso verifique se o número é menor ou maior que a mediana
-		além disso verifique se da para reutilizar algum movimento de a em b
-6 - repetir os passos 4 e 5 até acabar com a lista
-7 - repetir os passos 2 e 3 até a stack a for menor que 5 elementos.
-8 - fazer o algorítmo do retorno a stack a até não tiver nada na stack b
-	verificar se está indo de maneira ordenada.
-*/
 
 static int	bring_minors_2b(t_stack **a, t_stack **b, t_list *minors, int size)
 {
 	t_list	*init;
 	t_stack	*temp;
-	int	midian;
+	int		midian;
 
 	init = minors;
 	find_minnodes(a, minors, size);
@@ -52,7 +36,7 @@ static int	bring_minors_2b(t_stack **a, t_stack **b, t_list *minors, int size)
 static void	bring_majors_2a(t_stack **a, t_stack **b, t_list *majors)
 {
 	t_stack	*temp;
-	
+
 	if (!ft_stcksize(b))
 		return ;
 	find_maxnodes(b, majors, 2);
@@ -85,7 +69,7 @@ void	quick_sort(t_stack **a, t_stack **b)
 	while (ft_stcksize(a) > 5)
 	{
 		if (bring_minors_2b(a, b, *minors, size))
-			break;
+			break ;
 	}
 	if (!check_order(*a))
 		sort_algorithm(a, b);

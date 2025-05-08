@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:41:25 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/07 20:30:55 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 21:49:42 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_stack	*find_minnode(t_stack **stack)
 	return (min);
 }
 
-static int count_content(t_list *list)
+static int	count_content(t_list *list)
 {
 	int	i;
 

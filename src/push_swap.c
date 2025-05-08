@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 21:48:56 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/07 21:18:03 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 21:48:04 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ int	main(int argc, char **argv)
 	stack_b = ft_calloc(1, sizeof(t_stack *));
 	if (check_stacks(stack_a, stack_b))
 		return (0);
-	//show_stacks(stack_a, stack_b);
 	sort_algorithm(stack_a, stack_b);
-	//ft_printf("\nApós a ordeenação>\n\n");
-	//show_stacks(stack_a, stack_b);
 	clear_stack(stack_a);
 	clear_stack(stack_b);
 	return (0);
