@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:32:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/04/24 20:35:59 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:28:43 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,10 @@ static int	*num_builder(int **numbers, char **args, int index)
 	}
 	*tempi = (int)templ;
 	if (check_repeat(numbers, tempi, index))
+	{
+		free(tempi);
 		return (NULL);
+	}
 	numbers[index] = tempi;
 	return (tempi);
 }
