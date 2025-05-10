@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:32:46 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/09 19:28:43 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/10 15:50:13 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	**to_int(char **args)
 	{
 		if (!num_builder(numbers, args, i++))
 		{
-			ft_printf("Error\n");
+			ft_putstr_fd("Error\n", 2);
 			clear_numbers_args(numbers, args);
 			return (NULL);
 		}
