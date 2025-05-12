@@ -6,7 +6,7 @@
 /*   By: hmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 19:05:10 by hmacedo-          #+#    #+#             */
-/*   Updated: 2025/05/10 16:31:24 by hmacedo-         ###   ########.fr       */
+/*   Updated: 2025/05/12 19:41:04 by hmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char	**treat_args(int argc, char **argv)
 			ft_putstr_fd("alocation error", 2);
 		else
 			free(result);
+		ft_putstr_fd("Error\n", 2);
 		return (NULL);
 	}
 	free(join);
